@@ -1,6 +1,6 @@
 {
     "name": "novalnet-gateway/isotope-novalnet",
-    "description": "Novalnet payment module for Contao Isotope Ecommerce",
+    "description": "Novalnet payment bundle for Contao Isotope Ecommerce",
     "keywords": ["contao", "isotope", "payment", "novalnet"],
     "type": "contao-bundle",
     "homepage": "https://www.novalnet.com",
