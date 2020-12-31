@@ -418,7 +418,7 @@ class NovalnetHelper
                     $order->checkout();
 
                     $orderNo = $order->getDocumentNumber() ?: $order->getId();
-                    $comments .= $this->prepareComments($transactionData, $orderNo, $guarantee='');
+                    $comments .= $this->prepareComments($transactionData, $orderNo);
                     $checkoutInfo       =   deserialize($order->checkout_info);
                     $checkoutInfo['payment_method']['info'] .= '<br>'.nl2br($comments);
                     $order->checkout_info   =   serialize($checkoutInfo);
