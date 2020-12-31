@@ -322,7 +322,10 @@ class NovalnetHelper
     /**
      * Get Guarantee payment error message
      *
+     * @param object $order
      * @param int $minAmount
+     * @param string $paymentType
+     *
      * @return string
      */
     public function getGuaranteeErrorMsg($order, $minAmount, $paymentType)
@@ -498,6 +501,7 @@ class NovalnetHelper
      *
      * @param array $response
      * @param int $orderNo
+     * @param string $guarantee
      * @return string
      */
     public function prepareComments($response, $orderNo, $guarantee='')
