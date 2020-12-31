@@ -19,7 +19,7 @@ declare(strict_types=1);
  * @license https://novalnet.de/payment-plugins/kostenlos/lizenz
  *
  */
-$GLOBALS['TL_LANG']['MODEL']['tl_iso_payment']['novalnetglobalconfig'] = ['Novalnet Global Configuration for Standard'];
+$GLOBALS['TL_LANG']['MODEL']['tl_iso_payment']['novalnetglobalconfig'] = ['Novalnet Global Configuration'];
 $GLOBALS['TL_LANG']['MODEL']['tl_iso_payment']['novalnetsepa'] = ['Novalnet Direct Debit SEPA'];
 $GLOBALS['TL_LANG']['MODEL']['tl_iso_payment']['novalnetcc'] = ['Novalnet Credit/Debit Cards'];
 $GLOBALS['TL_LANG']['MODEL']['tl_iso_payment']['novalnetinvoice'] = ['Novalnet Invoice'];
