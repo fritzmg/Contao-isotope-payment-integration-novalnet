@@ -1,0 +1,34 @@
+{
+    "name": "novalnet-gateway/isotope-novalnet",
+    "description": "Novalnet payment bundle for Contao Isotope Ecommerce",
+    "keywords": ["contao", "isotope", "payment", "novalnet"],
+    "type": "contao-bundle",
+    "homepage": "https://www.novalnet.de",
+    "version": "1.0.0",
+    "authors":[
+        {
+            "name": "Novalnet AG",
+            "homepage": "https://www.novalnet.com",
+            "email": "technic@novalnet.de"
+        }       
+    ],    
+    "require": {
+        "php": ">=7.1",
+        "contao/core-bundle": "^4.4",
+        "isotope/isotope-core": "^2.0",
+        "symfony/config": "^3.4 || ^4.0",
+        "symfony/dependency-injection": "^3.4.26 || ^4.1.12",
+        "symfony/http-kernel": "^3.4 || ^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NovalnetGateway\\IsotopeNovalnetBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "NovalnetGateway\\IsotopeNovalnetBundle\\ContaoManager\\Plugin"
+    },
+    "support": {
+        "email": "technic@novalnet.de"   
+    }
+}
