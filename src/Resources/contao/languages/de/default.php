@@ -40,7 +40,6 @@ $GLOBALS['TL_LANG']['MODEL']['tl_iso_payment']['novalnetpostfinance'] = ['Novaln
 $GLOBALS['TL_LANG']['MODEL']['tl_iso_payment']['novalnetbancontact'] = ['Novalnet Bancontact'];
 $GLOBALS['TL_LANG']['MODEL']['tl_iso_payment']['novalnetmultibanco'] = ['Novalnet Multibanco'];
 
-$GLOBALS['TL_LANG']['MSC']['nn_transaction_details'] = 'Novalnet-Transaktionsdetails';
 $GLOBALS['TL_LANG']['MSC']['nn_transaction_id'] = 'Novalnet-Transaktions-ID: ';
 $GLOBALS['TL_LANG']['MSC']['nn_test_mode'] = 'Testbestellung';
 
