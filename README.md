@@ -1,13 +1,12 @@
 # NOVALNET PAYMENT INTEGRATION FOR Contao-Isotope
-Novalnet’s Payment Plugin ensures simple and secure integration of payments and payment services for Contao-Isotope shops, allowing shop owners to automate the entire payment process from checkout till collection. 
+Novalnet’s Payment Bundle ensures simple and secure integration of payments and payment services for Contao-Isotope shops, allowing shop owners to automate the entire payment process from checkout till collection. 
 
 ## Integration requirements 
-Novalnet merchant account is required for using this Novalnet Payment Gateway for Contao-Isotope. The plugin is available for Contao versions 4.10.4, Isotope versions 2.6.14 in the following languages: EN & DE
+Novalnet merchant account is required for using this Novalnet Payment Bundle for Contao-Isotope. The bundle is available for Contao versions 4.10.4, Isotope versions 2.6.14 in the following languages: EN & DE
 
 ## Advanced functions for payment processing
 -	Easy configuration of international and local payment methods
 -	One PCI DSS certified payment platform for all payment operations
--	Credit Card with 3D Secure 
 -	Comprehensive fraud management solution with more than 60 supported modules 
 -	Secure SSL encoded gateways 
 -	On-hold transaction configuration for payments that exceed the pre-defined limit
@@ -33,14 +32,13 @@ For detailed documentation and other technical inquiries, please send us an emai
 -	PayPal
 -	Postfinance card
 -	PostFinance E-Finance
--	Cash on pickup
 -	Bancontact
 -	Multibanco
 
 ## Installation
 Easy installation of Novalnet Payment Bundle for Contao-Isotope will be done through the following steps: 
-1. Get the payment plugin & detailed documentation by <a href="https://www.novalnet.de/kontakt/sales"> contacting us </a>
-2. Install plugin to your Contao-Isotope shop 
+1. Get the payment bundle & detailed documentation by <a href="https://www.novalnet.de/kontakt/sales"> contacting us </a>
+2. Install bundle to your Contao-Isotope shop 
 3. Include Merchant Details in the shop admin panel 
 4. Activate & configure the preferred payment types in your shop admin panel
 
