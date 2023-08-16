@@ -191,7 +191,7 @@ class NovalnetHelper
     {
         $request['transaction'] = array(
           'payment_type'     => $this->paymentType[$currentPayment],
-          'amount'           => number_format($order->getTotal(), 2, '.', '')*100,
+          'amount'           => floatval(number_format($order->getTotal(), 2, '.', ''))*100,           
           'currency'         => $order->getCurrency(),          
           'system_url'       => \Environment::get('base') ,
           'return_url'       => \Environment::get('base') . Checkout::generateUrlForStep(Checkout::STEP_COMPLETE, $order),
@@ -340,7 +340,7 @@ class NovalnetHelper
 
         $errorMsg = '';
 
-        $amount = number_format($order->getTotal(), 2)*100;
+        $amount = floatval(number_format($order->getTotal(), 2, '.', ''))*100;
 
         if (!($amount >= $minAmount)) {
             $errorMsg .= PHP_EOL.sprintf(specialchars($GLOBALS['TL_LANG']['MSC']['nn_guarantee_error_msg_amount']), sprintf('%0.2f', $minAmount / 100));
