@@ -191,7 +191,7 @@ class NovalnetHelper
     {
         $request['transaction'] = array(
           'payment_type'     => $this->paymentType[$currentPayment],
-          'amount'           => number_format($order->getTotal(), 2)*100,           
+          'amount'           => number_format($order->getTotal(), 2, '.', '')*100,
           'currency'         => $order->getCurrency(),          
           'system_url'       => \Environment::get('base') ,
           'return_url'       => \Environment::get('base') . Checkout::generateUrlForStep(Checkout::STEP_COMPLETE, $order),
