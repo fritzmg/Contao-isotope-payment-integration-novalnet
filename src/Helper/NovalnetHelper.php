@@ -124,24 +124,31 @@ class NovalnetHelper
               'country_code'      => strtoupper($objBillingAddress->country),
         );
 
-        $request['customer']['shipping'] = array(
-            'street'            => $objShippingAddress->street_1,
-              'city'              => $objShippingAddress->city,
-              'zip'               => $objShippingAddress->postal,
-              'country_code'      => strtoupper($objShippingAddress->country),
-        );
-        if ($request['customer']['billing'] == $request['customer']['shipping']) {
+        if (null === $objShippingAddress) {
             $request['customer']['shipping'] = array(
                 'same_as_billing' => 1
             );
         } else {
             $request['customer']['shipping'] = array(
-             'first_name' => $objShippingAddress->firstname,
-             'last_name' => $objShippingAddress->lastname,
-             'email' => $objShippingAddress->email,
-             );
-             if (!empty($objShippingAddress->company)) {
-                $request['customer']['shipping']['company'] = $objShippingAddress->company;
+                'street'            => $objShippingAddress->street_1,
+                'city'              => $objShippingAddress->city,
+                'zip'               => $objShippingAddress->postal,
+                'country_code'      => strtoupper($objShippingAddress->country),
+            );
+
+            if ($request['customer']['billing'] == $request['customer']['shipping']) {
+                $request['customer']['shipping'] = array(
+                    'same_as_billing' => 1
+                );
+            } else {
+                $request['customer']['shipping'] = array_merge($request['customer']['shipping'], array(
+                    'first_name' => $objShippingAddress->firstname,
+                    'last_name' => $objShippingAddress->lastname,
+                    'email' => $objShippingAddress->email,
+                ));
+                if (!empty($objShippingAddress->company)) {
+                    $request['customer']['shipping']['company'] = $objShippingAddress->company;
+                }
             }
         }
 
