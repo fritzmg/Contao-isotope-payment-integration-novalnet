@@ -33,7 +33,7 @@
         "contao-manager-plugin": "NovalnetGateway\\IsotopeNovalnetBundle\\ContaoManager\\Plugin"
     },
     "support": {
-        "email": "technic@novalnet.de"   
+        "email": "technic@novalnet.de"  
     },
     "config": {
         "allow-plugins": {
