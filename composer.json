@@ -26,6 +26,7 @@
     "autoload": {
         "psr-4": {
             "NovalnetGateway\\IsotopeNovalnetBundle\\": "src/"
+	}
     },
     "extra": {
         "contao-manager-plugin": "NovalnetGateway\\IsotopeNovalnetBundle\\ContaoManager\\Plugin"
