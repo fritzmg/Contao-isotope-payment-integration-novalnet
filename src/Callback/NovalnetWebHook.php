@@ -247,7 +247,12 @@ class NovalnetWebHook
     {
         $paymentData = \Database::getInstance()->prepare("SELECT document_number, payment_data FROM tl_iso_product_collection WHERE id=?")->execute($order->getId());
 
-        $unSerializeData = json_decode($paymentData->payment_data, true);
+        try {
+            $unSerializeData = json_decode((string) $paymentData->payment_data, true, 512, JSON_THROW_ON_ERROR);
+        } catch (\JsonException $e) {
+            $unSerializeData = [];
+        }
+
         $unSerializeData['order_no'] = $paymentData->document_number;
         $responseOrderNo = $this->eventData['transaction']['order_no'];
 
