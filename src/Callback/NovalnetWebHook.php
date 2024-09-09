@@ -253,10 +253,10 @@ class NovalnetWebHook
             $unSerializeData = [];
         }
 
-        $unSerializeData['order_no'] = $paymentData->document_number;
+        $unSerializeData['order_no'] = $order->getDocumentNumber() ?: $order->getId();
         $responseOrderNo = $this->eventData['transaction']['order_no'];
 
-        if (!empty($responseOrderNo) && ($paymentData->document_number != $responseOrderNo)) {
+        if (!empty($responseOrderNo) && ($unSerializeData['order_no'] != $responseOrderNo)) {
             $this->displayMessage(['message' => "Order reference not matching"]);
         }
 
