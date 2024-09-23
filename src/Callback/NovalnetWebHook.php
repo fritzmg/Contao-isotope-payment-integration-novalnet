@@ -147,7 +147,7 @@ class NovalnetWebHook
 
             $this->receivedAmount = sprintf('%0.2f', $this->eventData['transaction']['amount'] / 100);
 
-            $this->orderId  = $this->eventData['transaction']['order_no'] ? $this->eventData['transaction']['order_no'] : $this->orderReference['order_no'];
+            $this->orderId  = ($this->eventData['transaction']['order_no'] ?? null) ? $this->eventData['transaction']['order_no'] : $this->orderReference['order_no'];
 
             switch ($this->eventType) {
                 case 'PAYMENT':
@@ -204,9 +204,9 @@ class NovalnetWebHook
         $this->validateChecksum();
 
         // Validate TID's from the event data
-        if (!preg_match('/^\d{17}$/', (string) $this->eventData['event']['tid'])) {
+        if (!preg_match('/^\d{17}$/', (string) ($this->eventData['event']['tid'] ?? null))) {
             $this->displayMessage(['message' => "Invalid event TID: " . $this->eventData['event']['tid'] . " received for the event(". $this->eventData['event']['type'] .")"]);
-        } elseif ($this->eventData['event']['parent_tid'] && !preg_match('/^\d{17}$/', (string) $this->eventData['event']['parent_tid'])) {
+        } elseif (($this->eventData['event']['parent_tid'] ?? null) && !preg_match('/^\d{17}$/', (string) $this->eventData['event']['parent_tid'])) {
             $this->displayMessage(['message' => "Invalid event TID: " . $this->eventData['event']['parent_tid'] . " received for the event(". $this->eventData['event']['type'] .")"]);
         }
     }
@@ -254,7 +254,7 @@ class NovalnetWebHook
         }
 
         $unSerializeData['order_no'] = $order->getDocumentNumber() ?: $order->getId();
-        $responseOrderNo = $this->eventData['transaction']['order_no'];
+        $responseOrderNo = $this->eventData['transaction']['order_no'] ?? null;
 
         if (!empty($responseOrderNo) && ($unSerializeData['order_no'] != $responseOrderNo)) {
             $this->displayMessage(['message' => "Order reference not matching"]);
